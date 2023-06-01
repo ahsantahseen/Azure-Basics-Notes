@@ -1,0 +1,115 @@
+
+Benefits of Cloud Computing:
+----------------------------
+
+In this module, you’ll be introduced to some of the benefits that cloud computing offers. 
+You’ll learn how cloud computing can help you meet variable demand while providing a good experience for your customer. 
+You’ll also learn about security, governance, and overall manageability in the cloud.
+
+Learning objectives
+
+After completing this module, you’ll be able to:
+
+Describe the benefits of high availability and scalability in the cloud.
+Describe the benefits of reliability and predictability in the cloud.
+Describe the benefits of security and governance in the cloud.
+Describe the benefits of manageability in the cloud.
+
+High Availability:
+------------------
+
+When you’re deploying an application, a service, or any IT resources, it’s important the resources are available when needed.
+High availability focuses on ensuring maximum availability, regardless of disruptions or events that may occur.
+
+When we are desiging our system, we would need to ensure that it accounts for service availability. 
+Azure is a highly available cloud enviorment that gurrantes uptime depending on service.
+
+Service Level Agreement SLA:
+----------------------------
+
+SLA is an agreement between a provider and a user, in service level agreement the IT staff ensures certain
+things that will be available on a % scale.
+
+Azure SLA is about uptime,downtime,credit when SLA is not meant given by Mircosoft to Azure User.
+
+99% and 99.9% meaning that in 99% can be downtime for 1.6 hour per week and 99.9% can be downtime for 
+10 minutes per week.
+
+Each Azure has it's own SLA.
+
+Scalability:
+------------
+
+Cloud Computing offers scalability, meaning that as your computational needs are increased or decreased 
+the more your cloud will scale for it, there are two types of scaling.
+
+1. Horizontal Scalability (Add more machines)
+2. Vertical Scalability (Upgrade that machine)
+
+Learn more about scaling:
+
+https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/2-high-availability-scalability-cloud
+
+Reliability:
+------------
+
+Reliability is the ability to recover from a failure and continue to function, it's one of the main foundations of the cloud computing
+architecture. Meaning that if one region of infrastructure gets disturbed due to any catastrophy then without much delay your cloud enviorment will shift
+itself to another region, fully completed automatically.
+
+Predictablity:
+---------------
+
+Predictability in the cloud lets you move forward with confidence. 
+Predictability can be focused on performance predictability or cost predictability
+Both performance and cost predictable are influenced by Azure.
+
+Performance:
+------------
+
+Basically performance focuses on predicting the resources that will be needed to provide a postive and good
+experinece to the users, options like load balacing and auto scaling are some of the tools that can be used
+to achieve this.
+
+Cost:
+-----
+Cost predictability is focused on predicting or forecasting the cost of the cloud spend. 
+With the cloud, you can track your resource use in real time, 
+monitor resources to ensure that you’re using them in the most efficient way, 
+and apply data analytics to find patterns and trends that help better plan resource deployments. 
+
+Compliance and Governance:
+---------------------------
+
+Whether you’re deploying infrastructure as a service or software as a service, cloud features support governance and compliance.
+Things like set templates help ensure that all your deployed resources meet corporate standards and government regulatory requirements. 
+Plus, you can update all your deployed resources to new standards as standards change. 
+Cloud-based auditing helps flag any resource that’s out of compliance with your corporate standards and provides mitigation strategies. 
+Depending on your operating model, software patches and updates may also automatically be applied, which helps with both governance and security.
+
+On the security side, you can find a cloud solution that matches your security needs. 
+If you want maximum control of security, infrastructure as a service provides you with physical resources 
+but lets you manage the operating systems and installed software, including patches and maintenance. 
+If you want patches and maintenance taken care of automatically, platform as a service or software as a service deployments may be the best cloud strategies for you.
+
+And because the cloud is intended as an over-the-internet delivery of IT resources, cloud providers are typically well suited to handle things 
+like distributed denial of service (DDoS) attacks, making your network more robust and secure.
+
+Management on Cloud:
+--------------------
+
+A major benefit of cloud computing is the manageability options. There are two types of manageability for cloud computing that you’ll learn about in this series, and both are excellent benefits.
+
+Management of the cloud speaks to managing your cloud resources. In the cloud, you can:
+
+Automatically scale resource deployment based on need.
+Deploy resources based on a preconfigured template, removing the need for manual configuration.
+Monitor the health of resources and automatically replace failing resources.
+Receive automatic alerts based on configured metrics, so you’re aware of performance in real time.
+Management in the cloud
+Management in the cloud speaks to how you’re able to manage your cloud environment and resources. You can manage these:
+
+Through a web portal.
+Using a command line interface.
+Using APIs.
+Using PowerShell.

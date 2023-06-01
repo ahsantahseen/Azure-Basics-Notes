@@ -1,0 +1,145 @@
+
+Azure Physical Infrastructure
+=============================
+
+- Regions:
+    - Availability Zones
+
+Azure's Physical Infrastructure is divided in to two parts:
+
+1. Physical Infrastructure
+
+Azure has it's own large datacenters, racks of resources including
+    - Power
+    - Cooling
+    - Networking Infrastructure
+
+Azure's Datacenters are divided into regions which are then divided into 
+availability zones.
+
+   * Regions: A region is a geographical area in the world which contains atleast
+             one or more particular datacenter nearby networked together with
+             a low-latency netowrk infrastructure. Azure automatically assings
+             and controls the resources within each region to ensure the workloads
+             are properly balanced.
+
+             Although we need choose a region whenever we are deploying our resources
+             on azure.
+    
+   * Global / Region Specific Resouces: Azure Active Directory, Azure DNS and Azure Traffic Managers 
+                                       are global resources that are not bound to a region,
+                                       while VMs and Storage Sizes are specific to the regions 
+    
+  *  Availability Zones: Azure physically seprates it's datacenters located in a region among availability-zones
+                        
+                        - Each AZ is equiped with it's own independent power, cooling and networking.
+                        - Each AZ is isolated, if one goes down the other continously works.
+                        - They are connected via Private Fiber Optic Cable.
+                        - To ensure resilency, a minimum of three seprate availability zones are present
+                          in all zone-enabled regions.
+                        - Primarly, they are made for VMs, managed disks, load balencers and Databases.
+
+                    Azure Classifies Resourecs/Services that supports AZs into three categories:
+
+                        - Zonal Serivces: You pin the resource to a specific zone (VMs, IP addresses, Disks)
+                        - Zone-redundant Services: Platform replicates accross multiple AZs (SQL DBs, Redundant Storage)
+                        - Non-regional Services: Services are always availabile availabile throughout the regions
+
+    Azure Provides Region Pairs for applications that impact multiple AZs in a single region.
+
+Region Pairs:
+
+Most Azure Regions are paired with another region within the same 
+geography (such as US, Europe or Asia) atleast has to be 300 miles away.
+
+This approach allows for the replication of resources accross a geography
+that helps reduce interuptions like natural disaster, civil unrest, power outage etc.
+So if one regions falls offline-then the next region will be activated as a fail over region.
+
+Not all Azure services automatically replicate data or automatically fall back from a failed region to cross-replicate to another enabled region.
+In these scenarios, recovery and replication must be configured by the customer.
+
+Like US East and US West are paired up with each other, because both are far apart enough to isolate from natural disasters.
+
+    Advantages For Region Pairs:
+
+        1. Prevents Outages on Region Levels
+        2. Protection from Tax and Data Laws (Like in France you can't take out the data, but in other region you can)
+
+    Important About Directions in Region Pairing:
+
+        Most Regions are paired in two directions, like both regions are backup for one another
+
+       US EAST <------> US WEST
+       
+       Here US EAST is a backup for US WEST and US WEST is a backup for US EAST,
+       Although there are some pairs that are only one direction. LIke West India 
+       and Brazil South.
+
+       WEST INDIA <------------ South India
+
+       Here, South India is a backup for a West India but South India does not rely on west india for it's backup.
+
+       Sovereign Regions are like isolated from main azure like China and US-Gov, DoD etc.
+
+
+
+2. Management Infrastructure:
+
+Well, the managemnet infrastructure includes azure resources and resource groups,
+subscriptions and accounts. Understanding the hierarchical organziation will help you 
+plan your projects and products
+
+    -Azure Resources and Resource Groups:
+
+    * Everything we create in Azure EcoSystem is considered as an resource
+    * Each Resource needs to be put in an Resource Group.
+    * Some Resources may need to be moved between groups but once you move
+      the former group will no longer be associated with that resource.
+    * No! You cannot make nested groups
+    * Action on Resource Group will affect on all the resources in the resource group
+
+    * It is best to group resources based on access schema and then assign access 
+    schemea at resource level.
+
+    - Azure Billing:
+
+    Similar like Resource Groups but more on the billing side and authoirzation
+    access on different resources on azure. Subscriptions links are stored in an
+    Azure Active Directory.
+
+    Accounts can have mutliple subscriptions but only one is required.
+    Subscriptions can be used to put boundaries on limting resources.
+
+    You have two types of boundaries:
+
+    1. Billing boundaries
+    2. Access Control boundaries
+
+    - Azure Management Groups:
+
+    Well if you're managing a large organziation with multiple teams and in different regions.
+    Then you would need to manage them efficiently, so we have to organize our subscriptions into 
+    seperate management groups where you can apply governance conditions to the management groups.
+    All subscriptions within a management group will inherit the conditions applied to that management group.
+
+        - You can make a nested hierarchical structure in Azure Management Groups
+
+        Use Cases for Azure Mangament Groups:
+
+         - hierarchical policy:  For instance you need to limit the number of VMs in US-West Production Group.
+                             so all the subscriptions under that management group will be affected and they cannot
+                             alter that policy which makes a better governance.
+    
+        - We can also provide user access to multiple subscriptions by using Azure Role Based Access Control or RBAC.
+         assign one role in the Mangament group and that role can access subscriptions under that management
+
+        Important Facts About Management Groups:
+
+            * 10,000 Management Groups can be supported under single Azure Directory
+            * Management Tree can be upto 6 levels of depth.
+            * Each Management Group and Subscriptions can support only one parent.
+
+
+
+

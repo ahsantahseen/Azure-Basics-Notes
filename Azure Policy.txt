@@ -1,0 +1,10 @@
+Azure Policy
+============
+
+ - Enables you to define both individual and group related
+   called initiatives.
+- You can set on a resource, resource group , subscription and so on.
+  it can be applied to any level. 
+- Azure Policies are inherited so if it's set on a resource group then all 
+  resouces will have the policy.
+  

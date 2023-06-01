@@ -1,0 +1,72 @@
+Azure Costs Factors:
+
+Azure's costs depends on many factors depending on the resources we use.
+
+- Azure TCO Calculator helps us calculate the total cost of the ownership
+  when we are migrating our workloads to azure from on-premises infratstructure.
+
+- Azure Pricing Calculator helps us to calculate the operational costs of our resources
+  that we use on azure on a monthly basis
+
+- Azure Advisor helps us to monitor our resources costs and prevents 
+  over budgedting.
+
+- CapEx / OpEx (Capital Costs, Operational Costs)
+- Azure shifts development costs from CapEx of building out and mainting a on-site 
+infrastructure to OpEx of renting infrastructure as you need it, whether it's compute 
+, storage  and networking etc.
+
+OpEx costs can be impacted by many factors, such as:
+
+1. Resource Type
+2. Consumption
+3. Maitainence 
+4. Geography
+5. Subscription Type
+6. Marketplace
+
+
+Resouce Types:
+
+- Regions impact on the resource price
+- When you create a resouce Azure creates are metered instance for that resource
+- Meter tracks your resource usage and generates a usage record for the billing
+
+    - For Example: You specify type of storage blob (HOT,COOL,ARCHIVE) creating them in dfferent regions but same specs will show you different cost.
+
+Consumption:
+
+    - Pay-as-you-go model
+    - Azure offers ability to commit resoures with a discounted price upto 72%
+
+-----------------------
+
+Pricing Calculators:
+
+ - Designed to give me estimated cost for provisioning resources in Azure.
+
+ TCO Calculator:
+ ---------------
+    - Designed to compare costs of running resources in cloud and on-premesis
+    - Additonally assumes other costs like Labor, IT Support and power.
+
+- Azure Pricing Calculator
+
+Cost Mangament in Azure:
+------------------------
+
+Azure Cost Mangament Tools is an overall budgeting and monitoring Tool
+
+    - Automate management of resouces (budget wise)
+    - Alerts, Billing Cycles
+
+ Types of Cost Alerts:
+
+    - Budget Alerts (Alert on exceeding given budget)
+    - Credit Alerts (Alert when azure's monetary commmitments are used, usualy alert at 90% or 100% depeletion)
+    - Department Spending Quota Alerts (Alerting when department's spending reaches are specific threshold)
+
+Tags can help you visualize all of the resources that participate in complex deployments. For example, you might tag a resource with its associated workload or application name
+and use software such as Azure DevOps to perform automated tasks on those resources.
+
+Tags are key value pairs in azure.

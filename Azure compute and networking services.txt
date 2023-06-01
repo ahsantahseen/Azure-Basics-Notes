@@ -1,0 +1,131 @@
+
+Azure Virtual Machines:
+=======================
+
+Azure Virtual Machines offer you IaaS virtualization. They offer the option similar 
+to any cloud Virtual machines like os, custom software, custom hosting etc.
+
+Azure Offers Scaling for it's VMs as well.
+
+    - Virtual Machines Scale Sets:
+
+     Well Virtual Machine Scale sets offer a dynamic load balancing solution
+     by upscaling or downscaling VMs depening on the demand that it's getting,
+     it has it's own load balancer and the user can configure the load balancer 
+     as well as the virtual machine scale set.
+
+     - Virtual Machine Availability Sets:
+
+     Availability Sets are there, to Ensure your VMs are upto-date and properly connected via power and networking
+     so that it can prevent your VMs from a power failure or single network failure.
+
+     They work like that, 
+
+     - In terms of Updating, it uses Update Groups and what it does is that it groups VMs togather and
+       ensures only one group will be down at a time for update, while machines in that update group will
+       be updating while other update groups will continue to run.
+
+       An update group going through the update process is given a 30-minute time to recover before maintenance on the next update domain starts. 
+
+     - In terms of fault like networking and power, it groups VMs based on the same 
+       power source and network switch and it groups by 3 fault domains so VMs are to be 
+       secured from power losses for instance on group gets offline the other would function.
+
+    More over, there's no additional costs for the Availability groups just need 
+    to pay for the VMs that were used for it.
+
+Azure Virtual Desktops
+======================
+
+Well Azure Virtual Desktop is similar to it's name, but here you have a complete virtualized enviornment
+with native feel, your Windows can be completely virtualized with it's own seperate storage server and other resources in a shared
+enviornment, so the risk of data theft on personal devices will be gone as now the data would be residing on a server rather than the host.
+
+It offers multi-usage meaning two or more collaborating on the virtualized Desktop at the same time, it supports apps like Office365 and OneNote.
+
+It has a centralized security management for users' desktop with AD and Multifactor Authentication and also RBAC SECURITY.
+
+Azure Containers
+================
+
+Well when you want to save money on your resources of your applications then containers is the way to go that runs on a sinlge host.
+
+Containers are lightweight enviornments that don't require their own operating system and work on a single host. They can be scaled-up and down dynamically.
+We won't need to manage any OS configurations in containers, they are more lightweight and agile compared to virtual machines.
+
+One of the popular container engine, Dockers is supported by Azure and is widly used.
+
+https://www.microsoft.com/en-us/videoplayer/embed/RE2yuaq?postJsllMsg=true
+
+Azure Container Instances is an PaaS, offering you to create your own containers on it's container engine.
+
+Containers are mainly used where performance and portability matters for applications and flexibility matters for an application the it is used VM.
+
+Azure Serverless functions
+==========================
+
+No need to manage the server, just run your code on the server and pay per use model.
+You just need to pay for the excecution time of that code on the server enviornment.
+
+There are three advantages in Serverless computing
+
+1. No Administration for the server
+2. No configurations for the server
+3. Highly Scaleable
+
+Serverless functions on azure can be stateful or stateless. By default they are stateless, so if they are stateless they would restart every time to respond to an event
+while in stateful, an context is passed through out the function to track prior activity.
+
+Azure App Services:
+===================
+
+Azure App Services enables us to build pretty much anything like RESTful APIS, Backends for Mobiles, Background Crons Jobs.
+Without actually managing the infrastructure. It will offer you automatic scaling and high availability.
+
+App service supports linux and windows. It offers you to setup an CI/CD enviornment for those apps as well.
+App service is an HTTP-based service for hosting web and mobile apps and mobile backends.
+
+Azure Virtual networking:
+========================
+
+Azure has it's virtual networks and subnets that enables services like VMs, web apps, databases to communicate with each other
+or with the public network aka internet or with your on-premisis infrastructure.
+
+Azure virtual network provides:
+
+ - Isolation and Segmentation:
+
+        With Azure, you can create multiple isolated networks with each having
+        their own subnets and IP ranges, however these IP ranges are not internet routable.
+        For name resolution, we use Azure DNS to confiure the private network to internal or external DNS sever.
+
+ - Internet Communication:
+
+        You can enable incoming public traffic to an resource in azure using an Public IP address or putting that 
+        resource on a public network load balancer as this way you have to add the public ip.
+
+ - Communicate between Azure resources:
+
+        You can use Azure Virtual Networks and create a virtual private network to communicate between 
+        resrouces in azure or you can also opt for service endpoitns like SQL Dbs and Storage account links.
+
+ - Communicate with on-premisis resources:
+
+        - Point to site VPN
+        - Site to Site VPN
+        - Azure Express Route
+
+ - Route network traffic
+ - Filter network traffic
+ - Connect virtual networks together
+
+ Azure offers both Public and Private communication endpoints, both have seperate
+ IPs for communication.
+
+More info about networking in azure:
+----------
+ https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/8-virtual-network
+
+
+
+

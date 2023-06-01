@@ -1,0 +1,59 @@
+Azure Directory services
+========================
+
+What is Active Directory?
+
+It's an Identity and Access Management Service provided 
+by Microsoft on Windows Server to manage accounts on 
+the network (on-premises).
+-------------------------------------------
+
+Since microsoft cannot maintain your (on-premises) AD, it Offers
+Azure AD which is an Cloud Based IAM serivce. With Azure AD, you can
+add many security features that are managed by Microsoft
+
+Such as :
+
+ - MFA / 2FA
+ - Detect Suspiecious Logins
+
+Azure AD helps you protect your Identity and Access Management
+at no extra cost involved.
+
+You can transfer our on-premises AD to Azure AD to tighten it's 
+security since microsoft will monitor your IAM.
+
+Azure AD is used by many people like:
+
+    - IT Admins
+    - App Developers (For SSO functionality)
+    - Users (IAM maintain and Password reset)
+    - Online Subscription Serviecs (Office 365, Microsft Dynamics CRM)
+
+Azure AD provides services such as:
+
+Authentication: This includes verifying identity to access applications and resources. 
+                It also includes providing functionality such as self-service password reset, multifactor authentication,
+                 a custom list of banned passwords, and smart lockout services.
+
+Single sign-on: Single sign-on (SSO) enables you to remember only one username and one password to access multiple applications. 
+                A single identity is tied to a user, which simplifies the security model. As users change roles or leave an organization, 
+                access modifications are tied to that identity, which greatly reduces the effort needed to change or disable accounts.
+
+Application management: You can manage your cloud and on-premises apps by using Azure AD. 
+                        Features like Application Proxy, SaaS apps, the My Apps portal, and single sign-on provide a better user experience.
+
+Device management:  Along with accounts for individual people, Azure AD supports the registration of devices. 
+                    Registration enables devices to be managed through tools like Microsoft Intune. 
+                    It also allows for device-based Conditional Access policies to restrict access attempts to only those coming from known devices, regardless of the requesting user account.
+-----------------------------------------------------------------------------
+
+------------------
+ Azure AD Connect:
+-------------------
+
+    Azure AD Connect, helps you connect your on-premises AD with Azure AD and syncronizes it.
+    This means that you can use both now with Microsoft's support and monitoring.
+
+
+https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/2-directory-services

@@ -1,0 +1,130 @@
+
+
+Introduction to Cloud Computing:
+--------------------------------
+
+After completing this module, you’ll be able to:
+
+Define cloud computing.
+Describe the shared responsibility model.
+Define cloud models, including public, private, and hybrid.
+Identify appropriate use cases for each cloud model.
+Describe the consumption-based model.
+Compare cloud pricing models.
+
+------------------------
+What is Cloud Computing:
+------------------------
+
+Basically Cloud Computing is using computing services over the internet
+without having to own the actual hardware instead just pay for the compute resource 
+like the compute power such as machine learing, IoT, Storage etc. With cloud computing
+you don't need to worry about mainting the hardware since it's the cloud provider
+that maintaines the hardware and ensure it's 24/7 available to use. It's highly scalable
+so you don't need to worry about the requirements of the hardware. All you need to do is to 
+manage your work on it and pay for the resource you will use only and not for the whole machine.
+So it also is cost efficent. Many Cloud Providers only give you option to choose the hardware like
+storage size and compute power like RAM, CPU cores etc.
+
+---------------------------
+Shared Responsibility Model:
+---------------------------
+
+Shared responsibility model, is used to define the responsibilities of a cloud provider and a consumer
+
+- The Cloud Provider is responsible for physical security of the machine, as well as power,
+  cooling, maintaining the hardware and the software of the machines and network.
+- The consumer is responsible for data and infomation security of it's resource that it is using on the cloud
+
+For example you have an SQL Server on cloud, the provider is responsible for the actual database
+but you are responsible for the entire schema, roles, protection of the data in that SQL Database.
+
+Then, for some things, the responsibility depends on the situation. If you’re using a cloud SQL database, the cloud provider would be responsible for maintaining the actual database.
+However, you’re still responsible for the data that gets ingested into the database. 
+If you deployed a virtual machine and installed an SQL database on it, you’d be responsible for database patches and updates, as well as maintaining the data and information stored in the database.
+
+To summarize it, the datacenter responsibilities are under the provider while the software that is being
+used on the machine is responsibility of the consure,
+
+These responsibilities change over different types of Clouds Types
+
+In IaaS, the consumer has the most responsibilities while in SaaS and PaaS it's comparatively less.
+
+You’ll always be responsible for:
+
+The information and data stored in the cloud
+Devices that are allowed to connect to your cloud (cell phones, computers, and so on)
+The accounts and identities of the people, services, and devices within your organization
+The cloud provider is always responsible for:
+
+The physical datacenter
+The physical network
+The physical hosts
+Your service model will determine responsibility for things like:
+
+Operating systems
+Network controls
+Applications
+Identity and infrastructure
+
+Learn More at:
+
+https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/4-describe-shared-responsibility-model
+
+-------------
+Cloud Models:
+-------------
+
+There are 3 Basic types of Cloud, Private, Public and Hybrid Cloud.
+ 
+Private Cloud:
+
+These clouds are owned by an private entity and is managed by them as well, it's more for coorporates that have concern of having
+their data on public clouds, it provides them much greater control than the other types. Many Private Clouds are setup by the 
+the company's own IT team but there are also 3rd Party Companies that offer that.
+
+Public Cloud:
+
+These clouds are managed by the providers that provide these services to the public, it's purchasable for anyone and can use it's resources to get their work done.
+The Key different public and private is the availability.
+
+Hybrid Cloud:
+
+It's a more of a combination for both, where you off-load some of your work on the cloud and some on the on-premisis.
+This is normally used to cope up with extra usage load on the systems, since a number of % of a load can be transfered on the cloud.
+Moreover, you can use hybrid cloud as an extra security, some cloud providers have great security layers that you can use on your private cloud thus making it hybrid.
+
+Multi-Cloud:
+ 
+It is basically an model where you combine two or more cloud providers to form your infrastucture like VMs from azure and Storage from S3.
+Moreover you start with one and then you want to migrate to another as well for extra services.
+
+Azure Arc:
+
+Azure Arc is a solution that manages your cloud enviorment whether it's public or a private cloud in your datacenter.
+It also works on multi-cloud model.
+
+Azure VMWare Solution:
+
+Migrating your private cloud enviorments to public cloud.
+
+------------------------
+Consumption-Based Model:
+------------------------
+
+When we compare IT infrastructure models, there are two expenses that we have to know about.
+
+The first is CapEx (Capital Expense) that is used to buy company cars, parking lot, building a data-center
+etc. CapEx is an up-front one time cost
+
+The second is OpEX (Operational Expense) that is used to run these things for a period of time like monthly,
+yearly etc. OpEX is a recuring expense that is charged on specific basis.
+
+Cloud Falls under OpEX because you are not paying for the center but you are paying for the resource you use and that be on either pay-as-you-use per hour or on montly basis.
+
+This is benefical because there's no upfront cost and also we can leave it when we are done so no need to worry
+about it, just pay and then stop whenever you like without having to sell or face loses in cost as it's pay-as-use model, meaning 
+you will be only charged for the resources you used.
+
+----------------------------
+

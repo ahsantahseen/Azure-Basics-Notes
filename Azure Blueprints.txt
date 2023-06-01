@@ -1,0 +1,30 @@
+Azure Blueprints
+=================
+
+ - Helps to Standardize cloud subscription/enviorments deploymnets
+ - Azure Blueprints can use to define repeatable settings and policies
+   that are applied as new subscriptions are created.
+- If we want to create a new Test/Dev enviorment with security and compliance
+  settings already configured, use a Blueprint.
+
+Artifacts:
+==========
+
+ - Each Component in blueprint is Artifact
+ - Artifacts can have no configuration like an SQL
+   server policy that be Default don't need addiotnal 
+   configs.
+- Artifacts can have one ore more parameters that you can configured
+- Artifacts include:
+ 
+    - Role assignments
+    - Policy assignments
+    - Azure Resource Manager templates
+    - Resource Groups
+
+-Azure Blueprints are version-able, 
+allowing you to create an initial configuration 
+and then make updates later on and assign a new version to the update. 
+
+Blueprint Defination : What should be deployed
+Blueprint Assignment : What was deployed

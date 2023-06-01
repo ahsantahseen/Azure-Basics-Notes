@@ -1,0 +1,28 @@
+Difference B/W Availability Sets and Fault Tol.
+
+Availability Sets are used to protect applications
+from hardware failres within an AZ.
+while Fault Tolerance is across multiple AZs
+
+Diff B/w Azure Express Route and VPN Gatway
+
+Well both work same but ER uses a private 
+connection while VPN Gateway uses a public
+connection.
+
+Azure Policy is RBAC pre-deployment practice, A lock is something that are
+post-deployment practice
+
+Azure Application Gateway is Security Based
+Load Balancer on layer 7 and Virtual Gateway is a layer 3
+network device that is used to connect.
+
+Azure Firewall monitors for all traffic for
+workloads while NSG will monitor for individual
+virtual networks, subnets and network interfaces
+for virtual machiens to refine traffic. 
+NSG works on allow or deny or ACL
+
+availability sets are used to protect applications from 
+hardware failures within an Azure data center, availability zones, protect applications from complete Azure data center failures.
+

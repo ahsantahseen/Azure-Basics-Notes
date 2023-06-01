@@ -1,0 +1,196 @@
+Azure Storage Services:
+=======================
+
+Well basically Azure Provides 5 Types of Storage Services on the Cloud.
+Both HTTP/HTTPS Protocols are supported by Azure on the web.
+
+1. Azure Blob Storage (Pure Text/Binary Storage best for Images, Docs,Streaming Services etc on the web)
+2. Azure Queue Storage (Simple Application Messaging Queue Service when applications are communicating with each other)
+3. Azure Disk Storage (Fully Managed Storage For VMs)
+4. Table Storage (noSQL Key Pair Storage)
+5. Azure Files Storage (Similar to S3, like a bucket)
+
+
+    Azure has 3 tiers:
+
+    1. Hot (Mostly Accessed)
+    2. Cool (Less Frequent Access)
+    3. Archieve (Long Term Cold Storage) 
+
+
+    Storage Types:
+
+    Standard Type : Supported for all services, Gneneral Purpose
+    Premium Block Blobs: Blob Storage (including Data Lake)
+    Premium File Shares: Azure File Storage purposes
+    Premium Page Blobs: Page Blobs Only
+
+    Storage Account Endpoints in Azure:
+
+    When naming your storage account, keep these rules in mind:
+
+        Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only.
+        Your storage account name must be unique within Azure. 
+        No two storage accounts can have the same name. 
+        This supports the ability to have a unique, accessible namespace in Azure.
+
+Azure Storage Redundancy
+========================
+
+Azure will always store multiple copies of your data, it's called Redundancy. Now what happens is that Azure protects your data from various unforseen consequnces.
+So to ensure your data's safety it stores on multiple places so that it can be highly available and durable.
+
+When considering Redundancy we need the following options to chose
+
+ * How your data is replicated in the primary region
+ * Decide the secondary region for disaster recovery (Must chose far apart places incase of natrual disasters)
+ * Applcations access to secondary data if primary goes down
+
+Primay Region Redundancy:
+-------------------------
+
+Data in the Azure Storage's Primary Region is replicated always 3 times, although
+azure does give you two options
+
+    - Store Data in Locally Redundant Storage
+    - Zone Redundant Storage
+
+    Locally Redundant Storage:
+
+        LRS, replicates your data three times within a single data center in the 
+        primary region. LRS provides atleast 11 nines durability (99.999999999%) of objects 
+        over a given year.
+
+        https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/locally-redundant-storage-37247957.png
+
+        Pros:
+
+        - Cheaper Option
+
+        Cons: 
+
+        - Less Durable
+        - Risk of Loss is more since a single data-center
+        
+    Zone Redundant Storage:
+
+        ZRS, replicates your data over three AZs syncronously. 
+        ZRS provides atleast 12 nines durability of objects over a given year.
+
+        https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/zone-redundant-storage-6dd46d22.png
+        
+        Pros:
+
+        - Accessible if a zone becomes unavailable since there are 2 more.
+        - No remounting required for file shares
+        - High availablity within a region
+
+        Cons: 
+
+        - Costly Options (Financal Standpoint)
+
+
+Redundancy in Secondary Region:
+-------------------------------
+
+Well applications that require highly available data, opt for redundancy in secondary region
+that is far apart from primary region which saves from a natural disaster or any unforseen consequnces
+happeing in the primary region.
+
+The secondary region is based on the region's pairs and it can't be changed.
+
+Azure Offers you:
+
+    - Geo-Redundant Storage Similar to LRS
+
+    https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/geo-redundant-storage-3432d558.png
+
+    - Geo-Zone Redundant Storage Similar to ZRS
+
+    https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/geo-zone-redundant-storage-138ab5af.png
+
+Learn More at:
+    
+    https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/3-redundancy
+
+A failover affects a primary region and it cannot recover than the RPO to the secondary region would be less than 15 mins
+Due to which secondary region may not be up-to-date.
+----------------------------------------------------------------------------
+
+The Azure Storage platform includes the following data services:
+
+Azure Blobs: A massively scalable object store for text and binary data. Also includes support for big data analytics through Data Lake Storage Gen2.
+Azure Files: Managed file shares for cloud or on-premises deployments.
+Azure Queues: A messaging store for reliable messaging between application components.
+Azure Disks: Block-level storage volumes for Azure VMs.
+
+-----------------------------------------------------------
+Azure Blob Storage:
+
+Well Blob Storage is an object storage solution to store raw text/binary data in the cloud.
+It is not limited any format, meaning you can have unstructured binary data.
+Data from any scientific instrumemt, streaming data, massive videos, encrypted data, you name it.
+
+It has a advantage over disk storage is that you can upload blobs without having the worry of your disk size
+since azure takes of that while in disk storage (block-level) you would need to be worried about your disk size.
+
+Blob storage is ideal for:
+
+Serving images or documents directly to a browser.
+Storing files for distributed access.
+Streaming video and audio.
+Storing data for backup and restore, disaster recovery, and archiving.
+Storing data for analysis by an on-premises or Azure-hosted service.
+
+Accessing Blob:
+
+    - Via HTTP/HTTPS
+    - Blob URLS
+    - Azure Cli, PowerShell
+    - Client Libraries for Java,Node.js etc.
+
+Storage Tiers:
+
+    - Hot
+    - Cool
+    - Archieve
+
+https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/4-describe-azure-storage-services
+
+---------------------------------------------------------------------------
+
+Azure Files:
+
+Azure Files is an mounted File System solution either on cloud or on-premisis.
+It supports both SMB and NFS protocols. Azure File Sync caches SMB files to
+fast access nearby, where the data is being used currently.
+
+    Benefits:
+
+    - Offers both SMB/NFS so you can replace your on-premises File Share with 
+      Azure File Share without comptability issues.
+    - Fully Managed as Azure Takes care of the hardware, OS, security.
+    - Easily accessible via PowerShell and Azure Cli.
+    - Highly Resilient without any power,network issues.
+    - Familar Programming with easy to integrate via Client Libraries.
+
+-----------------------------------------------------------------------------
+
+Queue Storage:
+
+Azure Queue Storage is a service for storing large numbers of messages. Once stored, you can access the messages from anywhere in the world via authenticated calls using HTTP or HTTPS. A queue can contain as many messages as your storage account has room for (potentially millions). 
+Each individual message can be up to 64 KB in size. 
+Queues are commonly used to create a backlog of work to process asynchronously.
+
+Queue storage can be combined with compute functions like Azure Functions to take an action when a message is received. 
+
+For example, you want to perform an action after a customer uploads a form to your website. 
+You could have the submit button on the website trigger a message to the Queue storage. 
+Then, you could use Azure Functions to trigger an action once the message was received.
+
+------------------------------------------------------------------
+
+Disk Storage:
+
+It is a block storage Azure VMs, Conceptually same as physical disk but are virtualized and connected to the VM via a network.
+
